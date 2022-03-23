@@ -24,10 +24,12 @@ time, mark, audio, video {
     word-wrap: break-word;
     word-break:keep-all;
 }
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
     font-weight:normal;
 }
-img{max-width:100%;}
+img{
+    max-width:100%;
+}
 html {
     font-size: 100%;
     -webkit-text-size-adjust: 100%;
@@ -45,14 +47,14 @@ body {
     height:100%;
     font-family: 'NanumSquare' ,Apple SD Gothic Neo, 'Malgun Gothic',"맑은고딕", 'dotum',"돋움",sans-serif;
 }
-*:focus{
+*:focus {
     outline:2px dashed #CC1424!important;
     z-index: 500;
 }
-.slick-slide:focus{
+.slick-slide:focus {
   outline-offset: -2px;
 }
-button{
+button {
     border:none;
     box-shadow:none;
     margin: 0;
@@ -68,11 +70,15 @@ button{
     border-radius:0;
     font-size:100%;
 }
-button:focus{
+button:focus {
     outline:auto;
 }
-li{list-style:none; transform:skew(-0.03deg);}
-a{text-decoration:none;}
+li {
+    list-style:none;
+}
+a{
+    text-decoration:none;
+}
 ::-moz-selection {
   background: #cc1424;
   color: #fff;
@@ -94,7 +100,7 @@ a{text-decoration:none;}
     background: #212121;
     width: 10px;
 }
-input{
+input {
     -webkit-appearance : none;
     -moz-appearance:none;
     appearance:none;
@@ -104,10 +110,12 @@ input{
     font-family: 'NanumSquare';
     border-radius:0;
 }
-input:focus{
+input:focus {
     outline:none;
 }
-input::-ms-clear { display:none;}
+input::-ms-clear {
+    display:none;
+}
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-out-spin-button{
     -webkit-appearance: none;
@@ -120,17 +128,13 @@ input[type=number]::-webkit-inner-spin-button {
     -mox-appearance: none;
     appearance: none;
 }
-input[type=password] {font-family:'Malgun gothic', dotum, sans-serif;}
+input[type=password] {
+    font-family:'Malgun gothic', dotum, sans-serif;
+}
 input[type=number] {
     -moz-appearance:textfield;
 }
-input[type=checkbox]{
-    /* clip:rect(0,0,0,0);
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px; */
+input[type=checkbox] {
     width: 22px;
     height: 22px;
     position: absolute;
@@ -153,7 +157,9 @@ select {
     font-family:'NanumSquare' ,Apple SD Gothic Neo, 'Malgun Gothic',"맑은고딕", 'dotum',"돋움",sans-serif;
     transform:skew(-0.03deg);
 }
-select::-ms-expand { display:none; }
+select::-ms-expand {
+    display:none;
+}
 
 @media (max-width:768px) {
     html {
