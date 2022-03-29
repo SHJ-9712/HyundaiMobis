@@ -4,7 +4,7 @@
 
 .blind,
 caption,
-figcaption{
+figcaption {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -12,11 +12,11 @@ figcaption{
     overflow: hidden;
 }
 
-#skipNav{
+#skipNav {
     position:relative;
     z-index:9999;
 }
-#skipNav a{
+#skipNav a {
   display:block;
   width:100%;
   height:40px;
@@ -27,6 +27,367 @@ figcaption{
   margin-top: -40px;
 }
 #skipNav a:focus,
-#skipNav a:active{
-  margin-top:0;
+#skipNav a:active {margin-top:0;}
+
+.ico-link {
+    width: 14px;
+    height: 14px;
+    background: url(../images/content/ico-link.png);
+}
+.ico {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    vertical-align: middle;
+}
+.ico-h {
+    display: inline-block;
+    background: url(../images/common/header_ico.png);
+    background-size: 87px;
+    background-position-y: 0;
+    filter: brightness(0) invert(1);
+}
+button[type=button]:hover .ico-h {
+    background-position-y: -20px;
+}
+
+/* header */
+header {
+    width: 100%;
+    height: 90px;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    transition: top .3s ease, background-color .3s ease;
+    z-index: 1500;
+}
+header.hide {
+    background-color: #fff;
+    top: -90px;
+}
+.h-inner {
+    height: 100%;
+    padding: 0 calc(3% + 54px) 0 3%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+}
+.h-inner .logo {
+    width: 112px;
+    height: 38px;
+    display: inline-block;
+    background: url(../images/common/logo_w.png) no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    transform: translateY(-50%);
+}
+header.hide .h-inner .logo {
+    background: url(../images/common/logo.png) no-repeat;
+    background-size: cover;
+}
+.h-inner .logo a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.gnb .subnav {
+    float: left;
+    overflow: hidden;
+    transform: none;
+}
+.gnb .subnav .h-depth1 {
+    padding: 33px 40px 30px;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+}
+header.hide .gnb .subnav .h-depth1 {
+    color: #242424;
+}
+.subnav .subnav-content {
+    display: none;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    transition: opacity .2s ease;
+    overflow: hidden;
+}
+.subnav:hover .subnav-content {
+    opacity: 1;
+}
+.subnav-content .slide-menu {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #F0F0F0;
+    border-bottom: 1px solid #F0F0F0;
+}
+.subnav-content .slide-menu .sub-menu {
+    min-height: 403px;
+    padding: 54px 3%;
+}
+.subnav-content .slide-menu .sub-menu + .sub-menu {
+    border-left: 1px solid #F0F0F0;
+}
+.slide-menu .sub-menu .h-depth2 {
+    height: 1em;
+    margin-bottom: 24px;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 700;
+}
+.slide-menu .sub-menu:hover .h-depth2 {
+    color: #cc1424;
+}
+.sub-menu ul li {
+    line-height: 1em;
+}
+.sub-menu ul li + li {
+    margin-top: 18px;
+}
+.sub-menu ul li a {
+    font-size: 15px;
+    font-weight: 700;
+    color: #a8a8a8;
+    position: relative;
+}
+.sub-menu ul li a:hover {
+    color: #cc1424;
+}
+.sub-menu ul li a::after {
+    content: "";
+    width: 0;
+    height: 1px;
+    border-bottom: 1px solid #cc1424;
+    display: inline-block;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width .2s ease;
+}
+.sub-menu ul li a:hover::after {
+    width: 100%;
+}
+.sub-menu ul li a .ico {
+    margin-left: 6px;
+    filter: invert(0.6);
+}
+.sub-menu ul li a:hover .ico {
+    background-position: bottom;
+    filter: invert(0);
+}
+.h-dropdown {
+    display: flex;
+}
+.h-dropdown .h-icons {
+    position: relative;
+}
+.h-dropdown .h-icons + .h-icons {
+    margin-left: 12px;
+    transition: padding .3s ease;
+}
+.h-dropdown .h-icons button[type=button] {
+    width: 42px;
+    height: 42px;
+    display: inline-block;
+    position: relative;
+}
+.h-dropdown .h-icons .ico-notice {
+    width: 18px;
+    height: 20px;
+    margin-top: 3px;
+    background-position-y: 0;
+}
+.h-dropdown .h-icons .ico-share-h {
+    width: 16px;
+    height: 19px;
+    background-position-x: -18px;
+}
+.h-dropdown .h-icons .ico-lang {
+    width: 19px;
+    height: 19px;
+    background-position-x: -34px;
+}
+.h-dropdown .h-icons .h-right-sub {
+    display: none;
+    padding: 30px;
+    background-color: #f0f0f0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #fff;
+    border-radius: 6px;
+    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 20%);
+    transition: opacity .2s ease;
+    z-index: 50;
+}
+.h-dropdown .h-icons .h-right-sub::before {
+    content: "";
+    width: 0;
+    height: 0;
+    display: inline-block;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid #f0f0f0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.h-icons .h-right-sub li a {
+    display: flex;
+}
+.h-icons .txt-area {
+    padding-left: 24px;
+    -moz-flex: 1;
+    flex: 1;
+}
+.h-dropdown .h-notice .dot-new {
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+    background-color: #d90416;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 7px;
+}
+.h-dropdown .h-notice .h-right-sub {
+    min-width: 356px;
+}
+.h-dropdown .h-notice .h-right-sub li + li {
+    margin-top: 30px;
+}
+.h-notice .img-area {
+    width: 139px;
+    height: 87px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+.h-notice .img-area img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.h-notice .txt-area .tit {
+    height: 3.87em;
+    display: -webkit-box;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.29;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-family: 'Malgun Gothic',"맑은고딕", 'dotum',"돋움",sans-serif;
+    color: #212121;
+}
+.h-notice .txt-area .date {
+    margin-top: 12px;
+    display: block;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 400;
+    color: #a8a8a8;
+}
+.h-notice .h-right-sub a:hover .txt-area .tit,
+.h-notice .h-right-sub a:hover .txt-area .date {
+    color: #cc1424;
+}
+.h-share li + li {
+    margin-top: 22px;
+}
+.h-share .img-area {
+    width: 26px;
+}
+.h-share .img-area .h-share-ico {
+    display: inline-block;
+    background: url(../images/common/h_share_ico.svg) no-repeat;
+    background-size: 235px;
+    background-position-y: 0;
+}
+.h-share .h-right-sub a:hover .h-share-ico {
+    background-position-y: -27px;
+}
+.h-share .img-area .ico-facebook {
+    width: 21.7px;
+    height: 22px;
+    background-position-x: -23px;
+}
+.h-share .img-area .ico-blog {
+    width: 24.8px;
+    height: 23px;
+    background-position-x: -65.5px;
+}
+.h-share .img-area .ico-post {
+    width: 17px;
+    height: 27px;
+    background-position-x: -91px;
+}
+.h-share .img-area .ico-kakao {
+    width: 25px;
+    height: 27px;
+    background-position-x: -136px;
+}
+.h-share .img-area .ico-live {
+    width: 26.5px;
+    height: 27px;
+    background-position-x: -162px;
+}
+.h-share .txt-area .tit-en,
+.h-share .txt-area .tit-kor {
+    display: block;
+    line-height: 1em;
+}
+.h-share .txt-area .tit-en {
+    font-size: 16px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.h-share .txt-area .tit-kor {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #a8a8a8;
+}
+.h-lang .h-right-sub li {
+    line-height: 14px;
+}
+.h-lang .h-right-sub li + li {
+    margin-top: 13px;
+}
+.h-lang .h-right-sub li a {
+    font-size: 14px;
+    font-weight: 800;
+    color: #a8a8a8;
+}
+.h-lang .h-right-sub li a:hover {
+    color: #cc1424;
+}
+.h-lang .h-right-sub li.current a {
+    color: #cc1424;
+    cursor: default;
+}
+.h-search-btn {
+    width: 42px;
+    height: 42px;
+    margin-left: 12px;
+    display: block;
+    position: relative;
+}
+.h-search-btn .h-ico-search {
+    width: 19px;
+    height: 19px;
+    background-position-x: -52px;
+}
+button[type=button].h-search-btn:hover .ico-h {
+    background-position-y: 0;
 }
